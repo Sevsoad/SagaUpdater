@@ -15,7 +15,7 @@ namespace Raven1_Worker
             var cmdArgs = new CommandLineOptions();
             if (Parser.Default.ParseArguments(args, cmdArgs))
             {
-                
+                var migrator = new MigrationInfo();
             }
         }
 
