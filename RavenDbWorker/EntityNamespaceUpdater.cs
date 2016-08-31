@@ -11,12 +11,12 @@ namespace RavenDbWorker
     /// <summary>
     /// Used to change namespaces in IDs of SagaUniqueIdentity collection
     /// </summary>
-    public class RavenDbWorker
+    public class EntityNamespaceUpdater
     {
         private readonly string _serverUrl;
         private readonly string _databaseName;
 
-        public RavenDbWorker(string serverUrl, string databaseName)
+        public EntityNamespaceUpdater(string serverUrl, string databaseName)
         {
             _serverUrl = serverUrl;
             _databaseName = databaseName;

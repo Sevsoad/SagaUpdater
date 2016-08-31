@@ -13,7 +13,7 @@ namespace RavenDbWorker.Tests
         [Test]
         public void SaveCorrectMeatadata()
         {
-            var worker = new RavenDbWorker(_server, _database);
+            var worker = new EntityNamespaceUpdater(_server, _database);
 
             worker.UpdateUniqueIdentityNamespace("oldNamespace", "newNamespace");
 

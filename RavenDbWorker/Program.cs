@@ -13,7 +13,7 @@ namespace RavenDbWorker
             var cmdArgs = new CommandLineOptions();
             if (Parser.Default.ParseArguments(args, cmdArgs))
             {
-                var dbWorker = new RavenDbWorker(cmdArgs.RavenServer, cmdArgs.DatabaseName);
+                var dbWorker = new EntityNamespaceUpdater(cmdArgs.RavenServer, cmdArgs.DatabaseName);
                 dbWorker.UpdateUniqueIdentityNamespace(cmdArgs.OldNamespace, cmdArgs.NewNamespace);
             }
         }

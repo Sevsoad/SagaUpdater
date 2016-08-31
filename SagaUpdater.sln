@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDbWorker", "RavenDbWorker\RavenDbWorker.csproj", "{259A083F-ABDA-49F5-B4C1-05AE5E9DA96A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raven1_Worker", "Raven1_Worker\Raven1_Worker.csproj", "{67023BAE-18BD-4653-975E-FCD44E03065C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{259A083F-ABDA-49F5-B4C1-05AE5E9DA96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{259A083F-ABDA-49F5-B4C1-05AE5E9DA96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{259A083F-ABDA-49F5-B4C1-05AE5E9DA96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67023BAE-18BD-4653-975E-FCD44E03065C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67023BAE-18BD-4653-975E-FCD44E03065C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67023BAE-18BD-4653-975E-FCD44E03065C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67023BAE-18BD-4653-975E-FCD44E03065C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
