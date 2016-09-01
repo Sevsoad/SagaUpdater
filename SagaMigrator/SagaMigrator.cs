@@ -19,7 +19,10 @@ namespace Raven1_Worker
 
         public void Run()
         {
+            Console.WriteLine("Retrieveing saga files");
             var sagaFiles = GetSagaFiles(_migrationInfo);
+
+            Console.WriteLine("Retrieveing uniqueIdentity files");
             var uniqueIdentities = GetUniqueIdentites(_migrationInfo);
 
             using (IDocumentStore store = new DocumentStore()
@@ -88,7 +91,7 @@ namespace Raven1_Worker
                 using (IDocumentSession session = store.OpenSession())
                 {
                     var recordIndex = 0;
-                    var stepSize = 1000;
+                    var stepSize = 400;
                     var recordsRead = 1;
 
                     while (recordsRead > 0)
@@ -96,6 +99,7 @@ namespace Raven1_Worker
                         var records = store.DatabaseCommands.StartsWith(migrationInfo.EntityOldNamespace, recordIndex, stepSize);
                         recordsRead = records.Length;
                         uniqueIdentites.AddRange(records);
+                        Console.WriteLine("UniqueIdentity files summary retrieved: {0}", uniqueIdentites.Count);
                         recordIndex += stepSize;
                     }
                 }
@@ -117,7 +121,7 @@ namespace Raven1_Worker
                 using (IDocumentSession session = store.OpenSession())
                 {
                     var recordIndex = 0;
-                    var stepSize = 30;
+                    var stepSize = 400;
                     var recordsRead = 1;
 
                     while (recordsRead > 0)
@@ -125,6 +129,7 @@ namespace Raven1_Worker
                         var records = store.DatabaseCommands.StartsWith(migrationInfo.SagaName, recordIndex, stepSize);
                         recordsRead = records.Length;
                         sagaFiles.AddRange(records);
+                        Console.WriteLine("Saga files summary retrieved: {0}", sagaFiles.Count);
                         recordIndex += stepSize;
                     }
                 }
